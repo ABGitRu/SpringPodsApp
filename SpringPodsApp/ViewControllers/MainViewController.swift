@@ -30,10 +30,9 @@ class MainViewController: UIViewController {
     
     private func animate() {
         animatingScreen.animation = animation.animation
-        animatingScreen.force = animation.force
-        animatingScreen.delay = animation.delay
-        animatingScreen.duration = animation.duration
-        animatingScreen.repeatCount = animation.repeatCount
+        animatingScreen.force = CGFloat(animation.force)
+        animatingScreen.delay = CGFloat(animation.delay)
+        animatingScreen.duration = CGFloat(animation.duration)
         animatingScreen.curve = animation.curve
         animatingScreen.animate()
     }
@@ -44,7 +43,7 @@ class MainViewController: UIViewController {
         animationButton.setTitle("Следующая анимация: \(nextAnimation.animation)",
                     for: .normal)
         
-        animationInfoLabel.text = "Анимация: \(animation.animation)\n Кривая: \(animation.curve)\n Сила: \(String(format: "%.2f",animation.force))\n Задержка: \(String(format: "%.2f",animation.delay))\n Длительность: \(String(format: "%.2f",animation.duration))\n Повторений: \(Int(animation.repeatCount))"
+        animationInfoLabel.text = "Анимация: \(animation.animation)\n Кривая: \(animation.curve)\n Сила: \(String(format: "%.2f",animation.force))\n Задержка: \(String(format: "%.2f",animation.delay))\n Длительность: \(String(format: "%.2f",animation.duration))"
         
         animation = nextAnimation
     }
