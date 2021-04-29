@@ -8,11 +8,11 @@
 
 
 struct AnimationModel {
-    var force: Float
-    var delay: Float
-    var duration: Float
-    var animation: String
-    var curve: String
+    let force: Float
+    let delay: Float
+    let duration: Float
+    let animation: String
+    let curve: String
     
     static func getAnimationSetting() -> AnimationModel {
         
@@ -21,8 +21,8 @@ struct AnimationModel {
         let force = Float.random(in: 0..<1.5)
         let delay = Float.random(in: 0..<1.5)
         let duration = Float.random(in: 0..<3)
-        let animation = anim.animationType.randomElement()!
-        let curve = anim.curveType.randomElement()!
+        let animation = anim.animationType.randomElement() ?? "slideleft"
+        let curve = anim.curveType.randomElement() ?? "easeIn"
         
         let animationSettings = AnimationModel(
             force: force,
