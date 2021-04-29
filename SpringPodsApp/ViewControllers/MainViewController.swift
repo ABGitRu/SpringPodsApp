@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet var animationInfoLabel: UILabel!
     @IBOutlet var animationButton: UIButton!
     
-    var animation = AnimationModel.getAnimationSetting()
+    private var animation = AnimationModel.getAnimationSetting()
     
     override func viewDidLoad() {
         super.viewDidLoad()
